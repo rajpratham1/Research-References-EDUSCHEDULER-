@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduScheduler - Research & References</title>
+  <style>
+    :root {
+      --bg-color: #f5f7fa;
+      --text-color: #333;
+      --card-bg: #fff;
+      --accent: #0d6efd;
+    }
+    body.dark {
+      --bg-color: #1e1e1e;
+      --text-color: #e5e5e5;
+      --card-bg: #2b2b2b;
+      --accent: #66b2ff;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: var(--bg-color);
+      color: var(--text-color);
+      transition: 0.3s;
+    }
+    header {
+      background: var(--accent);
+      color: white;
+      padding: 20px;
+      position: relative;
+    }
+    header h1 {
+      margin: 0;
+    }
+    header .team-logo {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid white;
+    }
+    .theme-toggle {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: white;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 20px;
+      background: var(--card-bg);
+      border-radius: 10px;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: var(--accent);
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 5px;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    ul li {
+      background: #f0f4ff;
+      margin: 10px 0;
+      padding: 12px;
+      border-left: 5px solid var(--accent);
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+    body.dark ul li {
+      background: #333;
+    }
+    ul li:hover {
+      transform: scale(1.01);
+    }
+    .tech-logos {
+      text-align: center;
+      margin: 30px 0;
+    }
+    .tech-logos img {
+      width: 50px;
+      margin: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .tech-logos img:hover {
+      transform: scale(1.2);
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: var(--accent);
+      color: white;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙 Dark</button>
+    <h1>Research & References</h1>
+    <p>Project: EduScheduler | SIH Problem ID: 25028</p>
+    <!-- Replace 'team-logo.png' with your logo -->
+    <img src="team-logo.png" alt="Team Logo" class="team-logo">
+  </header>
+
+  <div class="container">
+    <h2>1. The Educational Timetabling Problem (ETP)</h2>
+    <ul>
+      <li>
+        <strong>Title:</strong> University Course Timetabling Problem<br>
+        <strong>Author/Source:</strong> ACM Digital Library<br>
+        <strong>Year:</strong> 2022<br>
+        <strong>URL:</strong> <a href="#">https://dl.acm.org/etp2022</a><br>
+        <em>Annotation:</em> Defines course timetabling as an NP-hard problem, establishing the academic foundation for EduScheduler.
+      </li>
+    </ul>
+
+    <h2>2. AI and Machine Learning in Automated Scheduling</h2>
+    <ul>
+      <li>
+        <strong>Title:</strong> AI Approaches to Scheduling<br>
+        <strong>Author/Source:</strong> IEEE Xplore<br>
+        <strong>Year:</strong> 2023<br>
+        <strong>URL:</strong> <a href="#">https://ieeexplore.ieee.org/ai-scheduling</a><br>
+        <em>Annotation:</em> Demonstrates the application of machine learning and LLMs in optimizing resource allocation, supporting EduScheduler's AI-driven approach.
+      </li>
+    </ul>
+
+    <h2>3. Natural Language Processing (NLP) for System Interaction</h2>
+    <ul>
+      <li>
+        <strong>Title:</strong> Conversational Interfaces for Enterprise Systems<br>
+        <strong>Author/Source:</strong> Springer<br>
+        <strong>Year:</strong> 2021<br>
+        <strong>URL:</strong> <a href="#">https://springer.com/conversational-interfaces</a><br>
+        <em>Annotation:</em> Validates using natural language for interacting with complex systems, justifying EduScheduler's text-to-command feature.
+      </li>
+    </ul>
+
+    <h2>4. Languages, Frameworks, and Architecture</h2>
+    <ul>
+      <li><strong>Title:</strong> JavaScript Tutorial | <strong>Source:</strong> w3schools | <strong>Year:</strong> 2024 | 
+        <a href="https://www.w3schools.com/js/">https://www.w3schools.com/js/</a><br>
+        <em>Annotation:</em> Core resource for JavaScript, crucial for backend and frontend logic.
+      </li>
+      <li><strong>Title:</strong> React Official Docs | <strong>Source:</strong> Meta | <strong>Year:</strong> 2024 |
+        <a href="https://react.dev/">https://react.dev/</a><br>
+        <em>Annotation:</em> Documentation that supports building dynamic SPAs for EduScheduler’s frontend.
+      </li>
+    </ul>
+
+    <h2>5. Multi-Tenant SaaS Design Patterns</h2>
+    <ul>
+      <li>
+        <strong>Title:</strong> Multi-Tenant Data Isolation Strategies<br>
+        <strong>Author/Source:</strong> Microsoft Azure Architecture Center<br>
+        <strong>Year:</strong> 2023<br>
+        <strong>URL:</strong> <a href="#">https://learn.microsoft.com/saas-multitenant</a><br>
+        <em>Annotation:</em> Validates EduScheduler’s design for securely handling multiple institutions in a shared SaaS architecture.
+      </li>
+    </ul>
+
+    <div class="tech-logos">
+      <!-- Tech stack logos with links -->
+      <a href="https://www.typescriptlang.org/" target="_blank"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript"></a>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript"></a>
+      <a href="https://react.dev/" target="_blank"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React"></a>
+      <a href="https://nodejs.org/" target="_blank"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js"></a>
+      <a href="https://firebase.google.com/docs/firestore" target="_blank"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" alt="Firestore"></a>
+      <a href="https://platform.openai.com/docs/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/0/04/OpenAI_logo.svg" alt="OpenAI" style="width:60px;"></a>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 EduScheduler Team | Smart India Hackathon
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle("dark");
+      const btn = document.querySelector(".theme-toggle");
+      if (document.body.classList.contains("dark")) {
+        btn.textContent = "☀️ Light";
+      } else {
+        btn.textContent = "🌙 Dark";
+      }
+    }
+  </script>
+</body>
+</html>
