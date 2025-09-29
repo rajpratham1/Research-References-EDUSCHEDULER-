@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -9,13 +9,13 @@
       --bg-color: #f5f7fa;
       --text-color: #333;
       --card-bg: #fff;
-      --accent: #0d6efd;
+      --accent: #b5651d; /* light brown */
     }
     body.dark {
       --bg-color: #1e1e1e;
       --text-color: #e5e5e5;
       --card-bg: #2b2b2b;
-      --accent: #66b2ff;
+      --accent: #d19a66; /* softer brown for dark mode */
     }
     body {
       font-family: Arial, sans-serif;
@@ -48,12 +48,19 @@
       position: absolute;
       top: 20px;
       left: 20px;
-      background: white;
-      border: none;
+      background: #fff;
+      color: #333;
+      border: 1px solid #ccc;
       padding: 8px 14px;
-      border-radius: 5px;
+      border-radius: 6px;
       cursor: pointer;
       font-size: 14px;
+      transition: background 0.3s, color 0.3s;
+    }
+    body.dark .theme-toggle {
+      background: #444;
+      color: #eee;
+      border: 1px solid #666;
     }
     .container {
       max-width: 1000px;
@@ -73,7 +80,7 @@
       padding: 0;
     }
     ul li {
-      background: #f0f4ff;
+      background: #f7f2ec; /* light beige for readability */
       margin: 10px 0;
       padding: 12px;
       border-left: 5px solid var(--accent);
@@ -95,6 +102,9 @@
       margin: 10px;
       cursor: pointer;
       transition: 0.3s;
+      background: #fff;
+      border-radius: 6px;
+      padding: 4px;
     }
     .tech-logos img:hover {
       transform: scale(1.2);
@@ -113,7 +123,7 @@
     <button class="theme-toggle" onclick="toggleTheme()">🌙 Dark</button>
     <h1>Research & References</h1>
     <p>Project: EduScheduler | SIH Problem ID: 25028</p>
-    <!-- Replace 'team-logo.png' with your team logo -->
+    <!-- Replace 'team-logo.png' with your actual team logo -->
     <img src="team-logo.png" alt="Team Logo" class="team-logo">
   </header>
 
@@ -212,16 +222,14 @@
     </ul>
 
     <div class="tech-logos">
-      <!-- Tech stack logos with official docs -->
-      <a href="https://www.typescriptlang.org/docs/" target="_blank"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript"></a>
-      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript"></a>
+      <!-- Tech stack logos -->
       <a href="https://react.dev/" target="_blank"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React"></a>
       <a href="https://vitejs.dev/" target="_blank"><img src="https://vitejs.dev/logo.svg" alt="Vite" style="width:55px;"></a>
-      <a href="https://tailwindcss.com/docs" target="_blank"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg" alt="Tailwind"></a>
+      <a href="https://tailwindcss.com/docs" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg" alt="Tailwind CSS"></a>
       <a href="https://nodejs.org/en/docs" target="_blank"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js"></a>
       <a href="https://expressjs.com/" target="_blank"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express.js" style="filter:invert(1);"></a>
       <a href="https://firebase.google.com/docs/firestore" target="_blank"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" alt="Firebase"></a>
-      <a href="https://platform.openai.com/docs/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/0/04/OpenAI_logo.svg" alt="OpenAI" style="width:60px;"></a>
+      <a href="https://platform.openai.com/docs/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="ChatGPT" style="width:55px;"></a>
     </div>
   </div>
 
