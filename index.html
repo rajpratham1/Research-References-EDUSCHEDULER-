@@ -4,237 +4,134 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>EduScheduler - Research & References</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    :root {
-      --bg-color: #f5f7fa;
-      --text-color: #333;
-      --card-bg: #fff;
-      --accent: #0d6efd;
-    }
+    /* Dark theme */
     body.dark {
-      --bg-color: #1e1e1e;
-      --text-color: #e5e5e5;
-      --card-bg: #2b2b2b;
-      --accent: #66b2ff;
+      background-color: #1a202c;
+      color: #f7fafc;
     }
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: var(--bg-color);
-      color: var(--text-color);
-      transition: 0.3s;
-    }
-    header {
-      background: var(--accent);
-      color: white;
-      padding: 20px;
-      position: relative;
-    }
-    header h1 {
-      margin: 0;
-    }
-    header .team-logo {
-      position: absolute;
-      top: 15px;
-      right: 15px;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 2px solid white;
-    }
+    /* Toggle button styling */
     .theme-toggle {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      background: white;
-      border: none;
-      padding: 8px 14px;
-      border-radius: 5px;
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      z-index: 1000;
+    }
+    /* Logo bar styling */
+    .logo-bar {
+      position: fixed;
+      top: 1rem;
+      left: 1rem;
+      display: flex;
+      gap: 12px;
+      z-index: 1000;
+    }
+    .logo-bar img {
+      width: 38px;
+      height: 38px;
+      object-fit: contain;
       cursor: pointer;
-      font-size: 14px;
+      transition: transform 0.2s ease-in-out;
     }
-    .container {
-      max-width: 1000px;
-      margin: 30px auto;
-      padding: 20px;
-      background: var(--card-bg);
-      border-radius: 10px;
-      box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
-    }
-    h2 {
-      color: var(--accent);
-      border-bottom: 2px solid #ccc;
-      padding-bottom: 5px;
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-    ul li {
-      background: #f0f4ff;
-      margin: 10px 0;
-      padding: 12px;
-      border-left: 5px solid var(--accent);
-      border-radius: 5px;
-      transition: 0.3s;
-    }
-    body.dark ul li {
-      background: #333;
-    }
-    ul li:hover {
-      transform: scale(1.01);
-    }
-    .tech-logos {
-      text-align: center;
-      margin: 30px 0;
-    }
-    .tech-logos img {
-      width: 50px;
-      margin: 10px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-    .tech-logos img:hover {
-      transform: scale(1.2);
-    }
-    footer {
-      text-align: center;
-      padding: 15px;
-      background: var(--accent);
-      color: white;
-      margin-top: 40px;
+    .logo-bar img:hover {
+      transform: scale(1.15);
     }
   </style>
 </head>
-<body>
-  <header>
-    <button class="theme-toggle" onclick="toggleTheme()">🌙 Dark</button>
-    <h1>Research & References</h1>
-    <p>Project: EduScheduler | SIH Problem ID: 25028</p>
-    <!-- Replace 'team-logo.png' with your team logo -->
-    <img src="team-logo.png" alt="Team Logo" class="team-logo">
-  </header>
+<body class="bg-white text-gray-900">
 
-  <div class="container">
-    <h2>1. Frontend Development</h2>
-    <ul>
-      <li>
-        <strong>Title:</strong> React Official Documentation<br>
-        <strong>Source:</strong> Meta<br>
-        <strong>Year:</strong> 2024<br>
-        <strong>URL:</strong> <a href="https://react.dev/" target="_blank">https://react.dev/</a><br>
-        <em>Annotation:</em> React was chosen for its component-based architecture and efficient rendering, forming the backbone of EduScheduler’s frontend.
-      </li>
-      <li>
-        <strong>Title:</strong> Vite Official Documentation<br>
-        <strong>Source:</strong> Vite Team<br>
-        <strong>Year:</strong> 2024<br>
-        <strong>URL:</strong> <a href="https://vitejs.dev/" target="_blank">https://vitejs.dev/</a><br>
-        <em>Annotation:</em> Vite provides a fast build system and hot module replacement, streamlining development and boosting productivity.
-      </li>
-      <li>
-        <strong>Title:</strong> Tailwind CSS Documentation<br>
-        <strong>Source:</strong> Tailwind Labs<br>
-        <strong>Year:</strong> 2024<br>
-        <strong>URL:</strong> <a href="https://tailwindcss.com/docs" target="_blank">https://tailwindcss.com/docs</a><br>
-        <em>Annotation:</em> Tailwind CSS enables rapid UI development with a utility-first approach, ensuring design consistency across EduScheduler.
-      </li>
-    </ul>
+  <!-- 🌙 Theme Toggle -->
+  <button 
+    onclick="document.body.classList.toggle('dark')" 
+    class="theme-toggle bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-3 py-1 rounded shadow">
+    Toggle Theme
+  </button>
 
-    <h2>2. Backend Development</h2>
-    <ul>
-      <li>
-        <strong>Title:</strong> Express.js Official Documentation<br>
-        <strong>Source:</strong> Express.js Foundation<br>
-        <strong>Year:</strong> 2024<br>
-        <strong>URL:</strong> <a href="https://expressjs.com/" target="_blank">https://expressjs.com/</a><br>
-        <em>Annotation:</em> Express.js provides a lightweight yet powerful framework for building EduScheduler’s RESTful backend APIs.
-      </li>
-      <li>
-        <strong>Title:</strong> Node.js Official Documentation<br>
-        <strong>Source:</strong> Node.js Foundation<br>
-        <strong>Year:</strong> 2024<br>
-        <strong>URL:</strong> <a href="https://nodejs.org/en/docs" target="_blank">https://nodejs.org/en/docs</a><br>
-        <em>Annotation:</em> Node.js runtime supports EduScheduler’s scalable, event-driven backend infrastructure.
-      </li>
-      <li>
-        <strong>Title:</strong> OpenAI API Documentation<br>
-        <strong>Source:</strong> OpenAI<br>
-        <strong>Year:</strong> 2025<br>
-        <strong>URL:</strong> <a href="https://platform.openai.com/docs/" target="_blank">https://platform.openai.com/docs/</a><br>
-        <em>Annotation:</em> Demonstrates how EduScheduler integrates generative AI for intelligent schedule optimization and natural language-based modifications.
-      </li>
-    </ul>
-
-    <h2>3. Database & Authentication</h2>
-    <ul>
-      <li>
-        <strong>Title:</strong> Firestore Documentation<br>
-        <strong>Source:</strong> Google Firebase<br>
-        <strong>Year:</strong> 2024<br>
-        <strong>URL:</strong> <a href="https://firebase.google.com/docs/firestore" target="_blank">https://firebase.google.com/docs/firestore</a><br>
-        <em>Annotation:</em> Firestore’s NoSQL, document-based design supports EduScheduler’s evolving schema and real-time synchronization.
-      </li>
-      <li>
-        <strong>Title:</strong> Firebase Authentication Documentation<br>
-        <strong>Source:</strong> Google Firebase<br>
-        <strong>Year:</strong> 2024<br>
-        <strong>URL:</strong> <a href="https://firebase.google.com/docs/auth" target="_blank">https://firebase.google.com/docs/auth</a><br>
-        <em>Annotation:</em> Firebase Authentication manages secure login and identity verification for admins, faculty, and students.
-      </li>
-    </ul>
-
-    <h2>4. Foundational Knowledge</h2>
-    <ul>
-      <li>
-        <strong>Title:</strong> JavaScript Tutorial<br>
-        <strong>Source:</strong> W3Schools<br>
-        <strong>Year:</strong> 2024<br>
-        <strong>URL:</strong> <a href="https://www.w3schools.com/js/" target="_blank">https://www.w3schools.com/js/</a><br>
-        <em>Annotation:</em> Provided the core understanding of JavaScript, the foundation for both EduScheduler’s frontend and backend logic.
-      </li>
-      <li>
-        <strong>Title:</strong> HTML Tutorial<br>
-        <strong>Source:</strong> W3Schools<br>
-        <strong>Year:</strong> 2024<br>
-        <strong>URL:</strong> <a href="https://www.w3schools.com/html/" target="_blank">https://www.w3schools.com/html/</a><br>
-        <em>Annotation:</em> Ensured adherence to HTML5 standards for structuring EduScheduler’s web interface.
-      </li>
-      <li>
-        <strong>Title:</strong> CSS Tutorial<br>
-        <strong>Source:</strong> W3Schools<br>
-        <strong>Year:</strong> 2024<br>
-        <strong>URL:</strong> <a href="https://www.w3schools.com/css/" target="_blank">https://www.w3schools.com/css/</a><br>
-        <em>Annotation:</em> Supported styling fundamentals, complementing Tailwind CSS for EduScheduler’s UI design.
-      </li>
-    </ul>
-
-    <div class="tech-logos">
-      <!-- Tech stack logos with official docs -->
-      <a href="https://www.typescriptlang.org/docs/" target="_blank"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript"></a>
-      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript"></a>
-      <a href="https://react.dev/" target="_blank"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React"></a>
-      <a href="https://vitejs.dev/" target="_blank"><img src="https://vitejs.dev/logo.svg" alt="Vite" style="width:55px;"></a>
-      <a href="https://tailwindcss.com/docs" target="_blank"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg" alt="Tailwind"></a>
-      <a href="https://nodejs.org/en/docs" target="_blank"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js"></a>
-      <a href="https://expressjs.com/" target="_blank"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express.js" style="filter:invert(1);"></a>
-      <a href="https://firebase.google.com/docs/firestore" target="_blank"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" alt="Firebase"></a>
-      <a href="https://platform.openai.com/docs/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/0/04/OpenAI_logo.svg" alt="OpenAI" style="width:60px;"></a>
-    </div>
+  <!-- 🏷️ Logo Bar (Team + Tech Logos) -->
+  <div class="logo-bar">
+    <!-- Team Logo -->
+    <a href="https://your-team-link.com" target="_blank">
+      <img src="https://via.placeholder.com/100x100.png?text=Team+Logo" alt="Team Logo">
+    </a>
+    <!-- React -->
+    <a href="https://react.dev/" target="_blank">
+      <img src="https://raw.githubusercontent.com/github/explore/main/topics/react/react.png" alt="React Logo">
+    </a>
+    <!-- Tailwind CSS -->
+    <a href="https://tailwindcss.com/" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg" alt="Tailwind Logo">
+    </a>
+    <!-- ChatGPT -->
+    <a href="https://openai.com/" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="ChatGPT Logo">
+    </a>
   </div>
 
-  <footer>
-    &copy; 2025 EduScheduler Team | Smart India Hackathon
-  </footer>
+  <!-- 📑 Content Section -->
+  <main class="max-w-4xl mx-auto p-6">
+    <h1 class="text-3xl font-bold mb-6">EduScheduler - Research & References</h1>
 
-  <script>
-    function toggleTheme() {
-      document.body.classList.toggle("dark");
-      const btn = document.querySelector(".theme-toggle");
-      btn.textContent = document.body.classList.contains("dark") ? "☀️ Light" : "🌙 Dark";
-    }
-  </script>
+    <!-- Frontend -->
+    <section class="mb-6">
+      <h2 class="text-xl font-semibold mb-2">Frontend Development</h2>
+      <p>
+        <strong>React Official Documentation</strong> – 
+        <a href="https://react.dev/" target="_blank" class="text-blue-500 underline">https://react.dev/</a>  
+        <br>React’s component-based architecture allowed reusable UI building for different user roles.
+      </p>
+      <p>
+        <strong>Vite Official Documentation</strong> – 
+        <a href="https://vitejs.dev/" target="_blank" class="text-blue-500 underline">https://vitejs.dev/</a>  
+        <br>Vite provided faster hot-reload development compared to older bundlers.
+      </p>
+      <p>
+        <strong>Tailwind CSS Documentation</strong> – 
+        <a href="https://tailwindcss.com/docs" target="_blank" class="text-blue-500 underline">https://tailwindcss.com/docs</a>  
+        <br>Utility-first CSS framework for rapid and consistent UI design.
+      </p>
+    </section>
+
+    <!-- Backend -->
+    <section class="mb-6">
+      <h2 class="text-xl font-semibold mb-2">Backend Development</h2>
+      <p>
+        <strong>Express.js Official Documentation</strong> – 
+        <a href="https://expressjs.com/" target="_blank" class="text-blue-500 underline">https://expressjs.com/</a>  
+        <br>Provided robust routing for REST APIs and middleware.
+      </p>
+      <p>
+        <strong>OpenAI API Documentation</strong> – 
+        <a href="https://platform.openai.com/docs/" target="_blank" class="text-blue-500 underline">https://platform.openai.com/docs/</a>  
+        <br>Used for Generative AI-based scheduling and natural language interaction.
+      </p>
+    </section>
+
+    <!-- Database -->
+    <section class="mb-6">
+      <h2 class="text-xl font-semibold mb-2">Database & Authentication</h2>
+      <p>
+        <strong>Google Firestore Documentation</strong> – 
+        <a href="https://firebase.google.com/docs/firestore" target="_blank" class="text-blue-500 underline">https://firebase.google.com/docs/firestore</a>  
+        <br>NoSQL flexible schema for student/faculty/schedule data.
+      </p>
+      <p>
+        <strong>Firebase Authentication Documentation</strong> – 
+        <a href="https://firebase.google.com/docs/auth" target="_blank" class="text-blue-500 underline">https://firebase.google.com/docs/auth</a>  
+        <br>Provides secure authentication and role-based access control.
+      </p>
+    </section>
+
+    <!-- Foundational -->
+    <section>
+      <h2 class="text-xl font-semibold mb-2">Foundational Knowledge</h2>
+      <p>
+        <strong>W3Schools</strong> – 
+        <a href="https://www.w3schools.com/" target="_blank" class="text-blue-500 underline">https://www.w3schools.com/</a>  
+        <br>Provided reference material for HTML, CSS, and JavaScript fundamentals.
+      </p>
+    </section>
+  </main>
+
 </body>
 </html>
