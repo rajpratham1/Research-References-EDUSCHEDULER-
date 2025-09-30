@@ -25,37 +25,41 @@
       color: var(--text-color);
       transition: 0.3s;
     }
-    /* --- FIX STARTS HERE --- */
     header {
       background: var(--accent);
       color: white;
-      padding: 15px 20px; /* Adjusted padding slightly */
-      display: flex; /* Use Flexbox for layout */
-      justify-content: space-between; /* Pushes items to edges and center */
-      align-items: center; /* Vertically aligns all items */
-      flex-wrap: wrap; /* Allows items to wrap on very small screens */
-    }
-    .header-center {
-      text-align: center; /* Center the h1 and p text */
+      /* Significantly increased padding to make space for absolute elements */
+      padding: 20px 120px; /* Top/bottom 20px, Left/Right 120px to make room */
+      position: relative; /* Crucial for absolute positioning of children */
+      text-align: center; /* Center the text content */
     }
     header h1 {
       margin: 0;
-      font-size: 1.5em; /* Responsive font size */
+      font-size: 1.8em; /* Adjusted font size for better fit */
     }
     header p {
-      margin: 4px 0 0; /* Add small margin to the top */
-      font-size: 0.9em;
+      margin: 5px 0 0;
+      font-size: 0.95em;
     }
     header .team-logo {
-      /* No longer needs absolute positioning */
+      position: absolute; /* Position relative to the header */
+      top: 50%; /* Align vertically in the middle */
+      right: 20px; /* 20px from the right edge */
+      transform: translateY(-50%); /* Adjust for vertical centering */
       width: 80px;
       height: 25px;
+      object-fit: contain; /* Use 'contain' to ensure the whole logo is visible */
       border-radius: 2%;
-      object-fit: cover;
       border: .5px solid white;
+      /* FIX: Remove white background from logo */
+      background: none; 
+      padding: 0; /* Ensure no extra padding adds background */
     }
     .theme-toggle {
-      /* No longer needs absolute positioning */
+      position: absolute; /* Position relative to the header */
+      top: 50%; /* Align vertically in the middle */
+      left: 20px; /* 20px from the left edge */
+      transform: translateY(-50%); /* Adjust for vertical centering */
       background: #fff;
       color: #333;
       border: 1px solid #ccc;
@@ -64,11 +68,7 @@
       cursor: pointer;
       font-size: 14px;
       transition: background 0.3s, color 0.3s;
-      /* Add some margin to ensure spacing */
-      margin-right: 15px; 
     }
-    /* --- FIX ENDS HERE --- */
-
     body.dark .theme-toggle {
       background: #444;
       color: #eee;
@@ -135,12 +135,10 @@
   <header>
     <button class="theme-toggle" onclick="toggleTheme()">🌙 Dark</button>
     
-    <div class="header-center">
-      <h1>Research & References</h1>
-      <p>Project: EduScheduler | SIH Problem ID: 25028</p>
-    </div>
+    <h1>Research & References</h1>
+    <p>Project: EduScheduler | SIH Problem ID: 25028</p>
     
-    <img src="1758811185901.jpg" alt="Team Logo" class="team-logo">
+    <img src="https://assets-edited.replit.com/uploads/1690022244243_d815e100-344c-411a-a82f-287968a3068e.png" alt="Team Logo" class="team-logo">
   </header>
 
   <div class="container">
