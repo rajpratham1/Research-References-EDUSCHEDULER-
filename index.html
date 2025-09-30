@@ -121,6 +121,20 @@
     body.dark ul li {
       background: #333;
     }
+    
+    /* --- FIX: Styles to make URL links visible --- */
+    ul li a {
+      color: #0056b3; /* A standard, readable blue for links */
+      text-decoration: none; /* Remove underline by default */
+    }
+    ul li a:hover {
+      text-decoration: underline; /* Add underline on hover */
+    }
+    body.dark ul li a {
+      color: #8ab4f8; /* A lighter blue for better contrast in dark mode */
+    }
+    /* --- End FIX --- */
+
     ul li:hover {
       transform: scale(1.01);
     }
@@ -147,7 +161,6 @@
       color: white;
       margin-top: 40px;
     }
-    /* --- New styles for the diagram --- */
     .diagram-container {
       text-align: center;
       padding: 20px 0;
@@ -156,7 +169,6 @@
       margin-top: 20px;
       transition: 0.3s;
     }
-    /* Mermaid diagram styles for dark mode compatibility */
     body.dark .mermaid .node rect,
     body.dark .mermaid .node circle,
     body.dark .mermaid .node ellipse,
@@ -186,7 +198,7 @@
       stroke: #ccc !important;
     }
     body.dark .mermaid a {
-      fill: #8ab4f8; /* A nice blue for links in dark mode */
+      fill: #8ab4f8;
     }
   </style>
 </head>
@@ -205,29 +217,95 @@
   <div class="container">
     <h2>1. Frontend Development</h2>
     <ul>
-      <li><strong>Title:</strong> React Official Documentation<br>...</li>
-      <li><strong>Title:</strong> Vite Official Documentation<br>...</li>
-      <li><strong>Title:</strong> Tailwind CSS Documentation<br>...</li>
+      <li>
+        <strong>Title:</strong> React Official Documentation<br>
+        <strong>Source:</strong> Meta<br>
+        <strong>Year:</strong> 2024<br>
+        <strong>URL:</strong> <a href="https://react.dev/" target="_blank">https://react.dev/</a><br>
+        <em>Annotation:</em> React was chosen for its component-based architecture and efficient rendering, forming the backbone of EduScheduler’s frontend.
+      </li>
+      <li>
+        <strong>Title:</strong> Vite Official Documentation<br>
+        <strong>Source:</strong> Vite Team<br>
+        <strong>Year:</strong> 2024<br>
+        <strong>URL:</strong> <a href="https://vitejs.dev/" target="_blank">https://vitejs.dev/</a><br>
+        <em>Annotation:</em> Vite provides a fast build system and hot module replacement, streamlining development and boosting productivity.
+      </li>
+      <li>
+        <strong>Title:</strong> Tailwind CSS Documentation<br>
+        <strong>Source:</strong> Tailwind Labs<br>
+        <strong>Year:</strong> 2024<br>
+        <strong>URL:</strong> <a href="https://tailwindcss.com/docs" target="_blank">https://tailwindcss.com/docs</a><br>
+        <em>Annotation:</em> Tailwind CSS enables rapid UI development with a utility-first approach, ensuring design consistency across EduScheduler.
+      </li>
     </ul>
 
     <h2>2. Backend Development</h2>
     <ul>
-      <li><strong>Title:</strong> Express.js Official Documentation<br>...</li>
-      <li><strong>Title:</strong> Node.js Official Documentation<br>...</li>
-      <li><strong>Title:</strong> OpenAI API Documentation<br>...</li>
+      <li>
+        <strong>Title:</strong> Express.js Official Documentation<br>
+        <strong>Source:</strong> Express.js Foundation<br>
+        <strong>Year:</strong> 2024<br>
+        <strong>URL:</strong> <a href="https://expressjs.com/" target="_blank">https://expressjs.com/</a><br>
+        <em>Annotation:</em> Express.js provides a lightweight yet powerful framework for building EduScheduler’s RESTful backend APIs.
+      </li>
+      <li>
+        <strong>Title:</strong> Node.js Official Documentation<br>
+        <strong>Source:</strong> Node.js Foundation<br>
+        <strong>Year:</strong> 2024<br>
+        <strong>URL:</strong> <a href="https://nodejs.org/en/docs" target="_blank">https://nodejs.org/en/docs</a><br>
+        <em>Annotation:</em> Node.js runtime supports EduScheduler’s scalable, event-driven backend infrastructure.
+      </li>
+      <li>
+        <strong>Title:</strong> OpenAI API Documentation<br>
+        <strong>Source:</strong> OpenAI<br>
+        <strong>Year:</strong> 2025<br>
+        <strong>URL:</strong> <a href="https://platform.openai.com/docs/" target="_blank">https://platform.openai.com/docs/</a><br>
+        <em>Annotation:</em> Demonstrates how EduScheduler integrates generative AI for intelligent schedule optimization and natural language-based modifications.
+      </li>
     </ul>
 
     <h2>3. Database & Authentication</h2>
     <ul>
-      <li><strong>Title:</strong> Firestore Documentation<br>...</li>
-      <li><strong>Title:</strong> Firebase Authentication Documentation<br>...</li>
+      <li>
+        <strong>Title:</strong> Firestore Documentation<br>
+        <strong>Source:</strong> Google Firebase<br>
+        <strong>Year:</strong> 2024<br>
+        <strong>URL:</strong> <a href="https://github.com/rajpratham1/EduScheduler/blob/main/firebassdocumentation.md" target="_blank">https://firebase.google.com/docs/firestore</a><br>
+        <em>Annotation:</em> Firestore’s NoSQL, document-based design supports EduScheduler’s evolving schema and real-time synchronization.
+      </li>
+      <li>
+        <strong>Title:</strong> Firebase Authentication Documentation<br>
+        <strong>Source:</strong> Google Firebase<br>
+        <strong>Year:</strong> 2024<br>
+        <strong>URL:</strong> <a href="https://github.com/rajpratham1/EduScheduler/blob/main/Firebase%20Authentication%20Documentation" target="_blank">https://firebase.google.com/docs/auth</a><br>
+        <em>Annotation:</em> Firebase Authentication manages secure login and identity verification for admins, faculty, and students.
+      </li>
     </ul>
 
     <h2>4. Foundational Knowledge</h2>
     <ul>
-      <li><strong>Title:</strong> JavaScript Tutorial<br>...</li>
-      <li><strong>Title:</strong> HTML Tutorial<br>...</li>
-      <li><strong>Title:</strong> CSS Tutorial<br>...</li>
+      <li>
+        <strong>Title:</strong> JavaScript Tutorial<br>
+        <strong>Source:</strong> W3Schools<br>
+        <strong>Year:</strong> 2024<br>
+        <strong>URL:</strong> <a href="https://www.w3schools.com/js/" target="_blank">https://www.w3schools.com/js/</a><br>
+        <em>Annotation:</em> Provided the core understanding of JavaScript, the foundation for both EduScheduler’s frontend and backend logic.
+      </li>
+      <li>
+        <strong>Title:</strong> HTML Tutorial<br>
+        <strong>Source:</strong> W3Schools<br>
+        <strong>Year:</strong> 2024<br>
+        <strong>URL:</strong> <a href="https://www.w3schools.com/html/" target="_blank">https://www.w3schools.com/html/</a><br>
+        <em>Annotation:</em> Ensured adherence to HTML5 standards for structuring EduScheduler’s web interface.
+      </li>
+      <li>
+        <strong>Title:</strong> CSS Tutorial<br>
+        <strong>Source:</strong> W3Schools<br>
+        <strong>Year:</strong> 2024<br>
+        <strong>URL:</strong> <a href="https://www.w3schools.com/css/" target="_blank">https://www.w3schools.com/css/</a><br>
+        <em>Annotation:</em> Supported styling fundamentals, complementing Tailwind CSS for EduScheduler’s UI design.
+      </li>
     </ul>
 
     <h2>5. System & Resource Architecture</h2>
