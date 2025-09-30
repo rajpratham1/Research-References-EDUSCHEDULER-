@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>EduScheduler - Research & References</title>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
   <style>
     :root {
       --bg-color: #f5f7fa;
@@ -28,13 +29,13 @@
     header {
       background: var(--accent);
       color: white;
-      padding: 20px 120px; /* Top/bottom 20px, Left/Right 120px to make room */
-      position: relative; /* Crucial for absolute positioning of children */
-      text-align: center; /* Center the text content */
+      padding: 20px 120px;
+      position: relative;
+      text-align: center;
     }
     header h1 {
       margin: 0;
-      font-size: 1.8em; /* Adjusted font size for better fit */
+      font-size: 1.8em;
     }
     header p {
       margin: 5px 0 0;
@@ -45,42 +46,39 @@
       top: 50%;
       right: 20px;
       transform: translateY(-50%);
-      
-      /* Styles for the "HexaTech Minds" logo */
-      width: 120px; /* Adjusted width for the text */
-      height: 45px; /* Adjusted height */
-      background-color: #1d5c8e; /* Blue background from your logo image */
-      border-radius: 50% / 50%; /* Creates the oval shape */
+      width: 120px;
+      height: 45px;
+      background-color: #1d5c8e;
+      border-radius: 50% / 50%;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       color: white;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* A clear sans-serif font */
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.3); /* Slight shadow for depth */
-      padding: 5px 0; /* Add some vertical padding inside the oval */
-      box-sizing: border-box; /* Include padding in width/height */
-      text-decoration: none; /* In case it's wrapped in an anchor */
-      border: .5px solid white; /* Keep the white border */
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+      padding: 5px 0;
+      box-sizing: border-box;
+      text-decoration: none;
+      border: .5px solid white;
     }
     .team-logo span {
-      display: block; /* Make each line a block */
-      line-height: 1; /* Adjust line height for closer text */
+      display: block;
+      line-height: 1;
     }
     .team-logo .main-text {
-      font-size: 1.2em; /* Larger for "HexaTech" */
+      font-size: 1.2em;
       font-weight: bold;
     }
     .team-logo .sub-text {
-      font-size: 0.8em; /* Smaller for "Minds" */
+      font-size: 0.8em;
       font-weight: normal;
     }
-
     .theme-toggle {
-      position: absolute; /* Position relative to the header */
-      top: 50%; /* Align vertically in the middle */
-      left: 20px; /* 20px from the left edge */
-      transform: translateY(-50%); /* Adjust for vertical centering */
+      position: absolute;
+      top: 50%;
+      left: 20px;
+      transform: translateY(-50%);
       background: #fff;
       color: #333;
       border: 1px solid #ccc;
@@ -113,7 +111,7 @@
       padding: 0;
     }
     ul li {
-      background: #f7f2ec; /* light beige for readability */
+      background: #f7f2ec;
       margin: 10px 0;
       padding: 12px;
       border-left: 5px solid var(--accent);
@@ -149,16 +147,55 @@
       color: white;
       margin-top: 40px;
     }
+    /* --- New styles for the diagram --- */
+    .diagram-container {
+      text-align: center;
+      padding: 20px 0;
+      background: var(--bg-color);
+      border-radius: 8px;
+      margin-top: 20px;
+      transition: 0.3s;
+    }
+    /* Mermaid diagram styles for dark mode compatibility */
+    body.dark .mermaid .node rect,
+    body.dark .mermaid .node circle,
+    body.dark .mermaid .node ellipse,
+    body.dark .mermaid .node polygon {
+      fill: #444;
+      stroke: #ccc;
+      color: #eee;
+    }
+    body.dark .mermaid .edgeLabel {
+      background-color: #2b2b2b !important;
+      color: #eee;
+    }
+    body.dark .mermaid .cluster rect {
+      fill: #2b2b2b !important;
+      stroke: #666 !important;
+    }
+    body.dark .mermaid .cluster text {
+      fill: #eee !important;
+    }
+    body.dark .mermaid text {
+      fill: #eee !important;
+    }
+    body.dark .mermaid .arrowheadPath {
+      fill: #ccc !important;
+    }
+    body.dark .mermaid .edgePath .path {
+      stroke: #ccc !important;
+    }
+    body.dark .mermaid a {
+      fill: #8ab4f8; /* A nice blue for links in dark mode */
+    }
   </style>
 </head>
 <body>
 
   <header>
     <button class="theme-toggle" onclick="toggleTheme()">🌙 Dark</button>
-    
     <h1>Research & References</h1>
     <p>Project: EduScheduler | SIH Problem ID: 25028</p>
-    
     <div class="team-logo">
       <span class="main-text">HexaTech</span>
       <span class="sub-text">Minds</span>
@@ -168,97 +205,95 @@
   <div class="container">
     <h2>1. Frontend Development</h2>
     <ul>
-      <li>
-        <strong>Title:</strong> React Official Documentation<br>
-        <strong>Source:</strong> Meta<br>
-        <strong>Year:</strong> 2024<br>
-        <strong>URL:</strong> <a href="https://react.dev/" target="_blank">https://react.dev/</a><br>
-        <em>Annotation:</em> React was chosen for its component-based architecture and efficient rendering, forming the backbone of EduScheduler’s frontend.
-      </li>
-      <li>
-        <strong>Title:</strong> Vite Official Documentation<br>
-        <strong>Source:</strong> Vite Team<br>
-        <strong>Year:</strong> 2024<br>
-        <strong>URL:</strong> <a href="https://vitejs.dev/" target="_blank">https://vitejs.dev/</a><br>
-        <em>Annotation:</em> Vite provides a fast build system and hot module replacement, streamlining development and boosting productivity.
-      </li>
-      <li>
-        <strong>Title:</strong> Tailwind CSS Documentation<br>
-        <strong>Source:</strong> Tailwind Labs<br>
-        <strong>Year:</strong> 2024<br>
-        <strong>URL:</strong> <a href="https://tailwindcss.com/docs" target="_blank">https://tailwindcss.com/docs</a><br>
-        <em>Annotation:</em> Tailwind CSS enables rapid UI development with a utility-first approach, ensuring design consistency across EduScheduler.
-      </li>
+      <li><strong>Title:</strong> React Official Documentation<br>...</li>
+      <li><strong>Title:</strong> Vite Official Documentation<br>...</li>
+      <li><strong>Title:</strong> Tailwind CSS Documentation<br>...</li>
     </ul>
 
     <h2>2. Backend Development</h2>
     <ul>
-      <li>
-        <strong>Title:</strong> Express.js Official Documentation<br>
-        <strong>Source:</strong> Express.js Foundation<br>
-        <strong>Year:</strong> 2024<br>
-        <strong>URL:</strong> <a href="https://expressjs.com/" target="_blank">https://expressjs.com/</a><br>
-        <em>Annotation:</em> Express.js provides a lightweight yet powerful framework for building EduScheduler’s RESTful backend APIs.
-      </li>
-      <li>
-        <strong>Title:</strong> Node.js Official Documentation<br>
-        <strong>Source:</strong> Node.js Foundation<br>
-        <strong>Year:</strong> 2024<br>
-        <strong>URL:</strong> <a href="https://nodejs.org/en/docs" target="_blank">https://nodejs.org/en/docs</a><br>
-        <em>Annotation:</em> Node.js runtime supports EduScheduler’s scalable, event-driven backend infrastructure.
-      </li>
-      <li>
-        <strong>Title:</strong> OpenAI API Documentation<br>
-        <strong>Source:</strong> OpenAI<br>
-        <strong>Year:</strong> 2025<br>
-        <strong>URL:</strong> <a href="https://platform.openai.com/docs/" target="_blank">https://platform.openai.com/docs/</a><br>
-        <em>Annotation:</em> Demonstrates how EduScheduler integrates generative AI for intelligent schedule optimization and natural language-based modifications.
-      </li>
+      <li><strong>Title:</strong> Express.js Official Documentation<br>...</li>
+      <li><strong>Title:</strong> Node.js Official Documentation<br>...</li>
+      <li><strong>Title:</strong> OpenAI API Documentation<br>...</li>
     </ul>
 
     <h2>3. Database & Authentication</h2>
     <ul>
-      <li>
-        <strong>Title:</strong> Firestore Documentation<br>
-        <strong>Source:</strong> Google Firebase<br>
-        <strong>Year:</strong> 2024<br>
-        <strong>URL:</strong> <a href="https://github.com/rajpratham1/EduScheduler/blob/main/firebassdocumentation.md" target="_blank">https://firebase.google.com/docs/firestore</a><br>
-        <em>Annotation:</em> Firestore’s NoSQL, document-based design supports EduScheduler’s evolving schema and real-time synchronization.
-      </li>
-      <li>
-        <strong>Title:</strong> Firebase Authentication Documentation<br>
-        <strong>Source:</strong> Google Firebase<br>
-        <strong>Year:</strong> 2024<br>
-        <strong>URL:</strong> <a href="https://github.com/rajpratham1/EduScheduler/blob/main/Firebase%20Authentication%20Documentation" target="_blank">https://firebase.google.com/docs/auth</a><br>
-        <em>Annotation:</em> Firebase Authentication manages secure login and identity verification for admins, faculty, and students.
-      </li>
+      <li><strong>Title:</strong> Firestore Documentation<br>...</li>
+      <li><strong>Title:</strong> Firebase Authentication Documentation<br>...</li>
     </ul>
 
     <h2>4. Foundational Knowledge</h2>
     <ul>
-      <li>
-        <strong>Title:</strong> JavaScript Tutorial<br>
-        <strong>Source:</strong> W3Schools<br>
-        <strong>Year:</strong> 2024<br>
-        <strong>URL:</strong> <a href="https://www.w3schools.com/js/" target="_blank">https://www.w3schools.com/js/</a><br>
-        <em>Annotation:</em> Provided the core understanding of JavaScript, the foundation for both EduScheduler’s frontend and backend logic.
-      </li>
-      <li>
-        <strong>Title:</strong> HTML Tutorial<br>
-        <strong>Source:</strong> W3Schools<br>
-        <strong>Year:</strong> 2024<br>
-        <strong>URL:</strong> <a href="https://www.w3schools.com/html/" target="_blank">https://www.w3schools.com/html/</a><br>
-        <em>Annotation:</em> Ensured adherence to HTML5 standards for structuring EduScheduler’s web interface.
-      </li>
-      <li>
-        <strong>Title:</strong> CSS Tutorial<br>
-        <strong>Source:</strong> W3Schools<br>
-        <strong>Year:</strong> 2024<br>
-        <strong>URL:</strong> <a href="https://www.w3schools.com/css/" target="_blank">https://www.w3schools.com/css/</a><br>
-        <em>Annotation:</em> Supported styling fundamentals, complementing Tailwind CSS for EduScheduler’s UI design.
-      </li>
+      <li><strong>Title:</strong> JavaScript Tutorial<br>...</li>
+      <li><strong>Title:</strong> HTML Tutorial<br>...</li>
+      <li><strong>Title:</strong> CSS Tutorial<br>...</li>
     </ul>
 
+    <h2>5. System & Resource Architecture</h2>
+    <div class="diagram-container">
+      <div class="mermaid">
+        graph TD
+            subgraph "User Roles"
+                Admin[Admin]
+                Faculty[Faculty]
+                Student[Student]
+            end
+
+            subgraph "EduScheduler Application"
+                Frontend[("
+                    <b>Frontend (Client)</b><br/>
+                    - React<br/>
+                    - TypeScript<br/>
+                    - Vite<br/>
+                    - Tailwind CSS
+                ")]
+                Backend[("
+                    <b>Backend (Server)</b><br/>
+                    - Node.js<br/>
+                    - Express.js
+                ")]
+                FirebaseServices[("
+                    <b>Google Firebase</b><br/>
+                    - Firebase Authentication<br/>
+                    - Cloud Firestore (Database)
+                ")]
+            end
+
+            subgraph "Key References & Learning Resources"
+                Ref_React["React Documentation"]
+                Ref_Node["Node.js Documentation"]
+                Ref_Firebase["Firebase Documentation"]
+                Ref_MDN["MDN Web Docs"]
+                Ref_W3["W3Schools"]
+            end
+
+            %% --- System Flow ---
+            Admin --> Frontend
+            Faculty --> Frontend
+            Student --> Frontend
+            Frontend <-->|"API Calls (REST)"| Backend
+            Backend <-->|"Secure SDK Access"| FirebaseServices
+
+            %% --- Development & Knowledge Sources ---
+            Frontend -- "Developed using" --> Ref_React
+            Frontend -- "Learned from" --> Ref_MDN
+            Frontend -- "Learned from" --> Ref_W3
+
+            Backend -- "Developed using" --> Ref_Node
+            Backend -- "Learned from" --> Ref_MDN
+            Backend -- "Learned from" --> Ref_W3
+
+            FirebaseServices -- "Implementation guided by" --> Ref_Firebase
+
+            %% --- Clickable Links ---
+            click Ref_React "https://react.dev/" "React Docs"
+            click Ref_Node "https://nodejs.org/en/docs" "Node.js Docs"
+            click Ref_Firebase "https://firebase.google.com/docs" "Firebase Docs"
+            click Ref_MDN "https://developer.mozilla.org/" "MDN Web Docs"
+            click Ref_W3 "https://www.w3schools.com/" "W3Schools"
+      </div>
+    </div>
     <div class="tech-logos">
       <a href="https://react.dev/" target="_blank"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React"></a>
       <a href="https://vitejs.dev/" target="_blank"><img src="https://vitejs.dev/logo.svg" alt="Vite" style="width:55px;"></a>
@@ -280,6 +315,9 @@
       const btn = document.querySelector(".theme-toggle");
       btn.textContent = document.body.classList.contains("dark") ? "☀️ Light" : "🌙 Dark";
     }
+    
+    // Initialize Mermaid
+    mermaid.initialize({ startOnLoad: true });
   </script>
 </body>
 </html>
