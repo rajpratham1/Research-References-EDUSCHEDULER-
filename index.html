@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -25,19 +25,29 @@
       color: var(--text-color);
       transition: 0.3s;
     }
+    /* --- FIX STARTS HERE --- */
     header {
       background: var(--accent);
       color: white;
-      padding: 20px;
-      position: relative;
+      padding: 15px 20px; /* Adjusted padding slightly */
+      display: flex; /* Use Flexbox for layout */
+      justify-content: space-between; /* Pushes items to edges and center */
+      align-items: center; /* Vertically aligns all items */
+      flex-wrap: wrap; /* Allows items to wrap on very small screens */
+    }
+    .header-center {
+      text-align: center; /* Center the h1 and p text */
     }
     header h1 {
       margin: 0;
+      font-size: 1.5em; /* Responsive font size */
+    }
+    header p {
+      margin: 4px 0 0; /* Add small margin to the top */
+      font-size: 0.9em;
     }
     header .team-logo {
-      position: absolute;
-      top: 20px;
-      right: 20px;
+      /* No longer needs absolute positioning */
       width: 80px;
       height: 25px;
       border-radius: 2%;
@@ -45,9 +55,7 @@
       border: .5px solid white;
     }
     .theme-toggle {
-      position: absolute;
-      top: 20px;
-      left: 20px;
+      /* No longer needs absolute positioning */
       background: #fff;
       color: #333;
       border: 1px solid #ccc;
@@ -56,7 +64,11 @@
       cursor: pointer;
       font-size: 14px;
       transition: background 0.3s, color 0.3s;
+      /* Add some margin to ensure spacing */
+      margin-right: 15px; 
     }
+    /* --- FIX ENDS HERE --- */
+
     body.dark .theme-toggle {
       background: #444;
       color: #eee;
@@ -119,11 +131,15 @@
   </style>
 </head>
 <body>
+
   <header>
     <button class="theme-toggle" onclick="toggleTheme()">🌙 Dark</button>
-    <h1>Research & References</h1>
-    <p>Project: EduScheduler | SIH Problem ID: 25028</p>
-    <!-- Replace 'team-logo.png' with your actual team logo -->
+    
+    <div class="header-center">
+      <h1>Research & References</h1>
+      <p>Project: EduScheduler | SIH Problem ID: 25028</p>
+    </div>
+    
     <img src="1758811185901.jpg" alt="Team Logo" class="team-logo">
   </header>
 
@@ -222,7 +238,6 @@
     </ul>
 
     <div class="tech-logos">
-      <!-- Tech stack logos -->
       <a href="https://react.dev/" target="_blank"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React"></a>
       <a href="https://vitejs.dev/" target="_blank"><img src="https://vitejs.dev/logo.svg" alt="Vite" style="width:55px;"></a>
       <a href="https://tailwindcss.com/docs" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg" alt="Tailwind CSS"></a>
